@@ -60,6 +60,7 @@
         }
         .logo { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
+        .nav-right { display: flex; gap: 0.75rem; align-items: center; }
         .nav-cta {
             background: var(--gradient-gold);
             color: #FFF;
@@ -72,6 +73,18 @@
             transition: transform 0.2s;
         }
         .nav-cta:hover { transform: translateY(-2px); }
+        .nav-contact-btn {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .nav-contact-btn:hover { border-color: var(--accent); color: var(--accent); }
 
         /* Hero Section */
         .hero { padding: 3.5rem 0 2.5rem; text-align: center; }
@@ -270,6 +283,85 @@
         .stat-item h4 { font-size: 1.3rem; color: var(--accent-green); }
         .stat-item p { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
 
+        /* Contact Section Styling */
+        .contact-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--glass-border);
+            background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(18, 24, 38, 0.4) 100%);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+        .contact-info-card h2 { font-size: 2.1rem; margin-bottom: 1rem; }
+        .contact-info-card p { color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
+        
+        .contact-details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+        }
+        .contact-item-icon {
+            width: 40px; height: 40px;
+            background: rgba(217, 119, 6, 0.15);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .contact-item-text span { display: block; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .contact-item-text a, .contact-item-text p { color: #FFF; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+        .contact-item-text a:hover { color: var(--accent); }
+
+        .contact-form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        .form-control {
+            width: 100%;
+            background: #0B0F19;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            color: #FFF;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+
         /* Modal Popup Styles */
         .modal-overlay {
             display: none;
@@ -332,7 +424,7 @@
 
         @media (max-width: 850px) {
             .hero h1 { font-size: 2rem; }
-            .deepdive-grid, .deepdive-grid.reverse { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
+            .deepdive-grid, .deepdive-grid.reverse, .contact-grid { grid-template-columns: 1fr; gap: 2rem; direction: ltr; }
             .showcase-img { height: 240px; }
             .cta-group { flex-direction: column; align-items: stretch; }
             .cta-group a, .cta-group button { text-align: center; }
@@ -345,7 +437,10 @@
         <!-- Navigation -->
         <nav>
             <div class="logo">Latsky <span>Multimedia</span></div>
-            <a href="https://verandertglobal-creator.github.io/Familia-Guesthouse-Groblersdal/?guest=Vidette&room=Room+6" target="_blank" class="nav-cta">Live Guest Portal Demo</a>
+            <div class="nav-right">
+                <a href="#contact" class="nav-contact-btn">Contact</a>
+                <a href="https://verandertglobal-creator.github.io/Familia-Guesthouse-Groblersdal/?guest=Vidette&room=Room+6" target="_blank" class="nav-cta">Live Guest Portal Demo</a>
+            </div>
         </nav>
 
         <!-- Hero Section -->
@@ -364,7 +459,7 @@
 
             <div class="pillars-grid">
                 
-                <!-- Pillar 1 Card (Image 1) -->
+                <!-- Pillar 1 Card -->
                 <div class="pillar-card" onclick="openModal('portalModal')">
                     <div>
                         <span style="font-size: 0.7rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">01 / Digital Hospitality</span>
@@ -377,7 +472,7 @@
                     <div class="click-indicator">Tap to View Description & Pricing →</div>
                 </div>
 
-                <!-- Pillar 2 Card (Image 3) -->
+                <!-- Pillar 2 Card -->
                 <div class="pillar-card" onclick="openModal('socialModal')">
                     <div>
                         <span style="font-size: 0.7rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">02 / Client Acquisition</span>
@@ -390,7 +485,7 @@
                     <div class="click-indicator">Tap to View Description & Pricing →</div>
                 </div>
 
-                <!-- Pillar 3 Card (Image 5) -->
+                <!-- Pillar 3 Card -->
                 <div class="pillar-card" onclick="openModal('contentModal')">
                     <div>
                         <span style="font-size: 0.7rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">03 / Visual Excellence</span>
@@ -406,25 +501,24 @@
             </div>
         </section>
 
-        <!-- DEEP DIVE SECTION 1: INTERACTIVE GUEST PORTAL (Image 2) -->
+        <!-- DEEP DIVE SECTION 1: INTERACTIVE GUEST PORTAL -->
         <section class="feature-deepdive" id="portal-section">
             <div class="deepdive-grid">
                 <div class="deepdive-content">
                     <span class="hero-tag">Automated Concierge</span>
                     <h2>The Modern Guest House Portal & Guidebook</h2>
-                    <p>Replace bulky, outdated physical folders and scattered WhatsApp messages with a lightning-fast, web-based guest portal that works directly on your guests' mobile phones without requiring a complicated app store download. It acts as a digital concierge right in the palm of their hand.</p>
+                    <p>Replace bulky, outdated physical folders and scattered WhatsApp messages with a lightning-fast, web-based guest portal that works directly on your guests' mobile phones without requiring a complicated app store download.</p>
                     
                     <ul class="benefit-list">
-                        <li><strong>Gate-Opening Integration:</strong> Works with your existing GSM or smart gate controller. If it's already a Centurion or similar GSM unit, the button is free to add. If not, quote the hardware separately.</li>
-                        <li><strong>Live 7-Day Weather Forecast:</strong> Keep guests informed with real-time local weather updates directly in their portal interface.</li>
-                        <li><strong>Seamless Amenities & Info:</strong> Instant access to Wi-Fi passwords, house manuals, rules, emergency numbers, and power/load-shedding status.</li>
-                        <li><strong>Interactive Food & Bar Ordering:</strong> Complete digital menus (pizzas, drinks, mains) with live quantity counters, automated price totals, and direct ordering via WhatsApp.</li>
-                        <li><strong>Curated Local Activities:</strong> Specific recommendations for West Coast nature reserves, coastal hiking trails, and local dining spots.</li>
+                        <li><strong>Gate-Opening Integration:</strong> Works with your existing GSM or smart gate controller.</li>
+                        <li><strong>Live 7-Day Weather Forecast:</strong> Keep guests informed with real-time local weather updates.</li>
+                        <li><strong>Seamless Amenities & Info:</strong> Instant access to Wi-Fi passwords, house manuals, and rules.</li>
+                        <li><strong>Interactive Food & Bar Ordering:</strong> Complete digital menus with automated price totals and ordering.</li>
                     </ul>
 
                     <div class="cta-group">
                         <a href="https://verandertglobal-creator.github.io/Familia-Guesthouse-Groblersdal/?guest=Vidette&room=Room+6" target="_blank" class="btn-primary">View Live Demo</a>
-                        <button onclick="openModal('portalModal')" class="btn-secondary">View Description & Pricing</button>
+                        <button onclick="openModal('portalModal')" class="btn-secondary">View Details & Pricing</button>
                     </div>
                 </div>
 
@@ -444,23 +538,23 @@
             </div>
         </section>
 
-        <!-- DEEP DIVE SECTION 2: SOCIAL MEDIA MANAGEMENT (Image 4) -->
+        <!-- DEEP DIVE SECTION 2: SOCIAL MEDIA MANAGEMENT -->
         <section class="feature-deepdive" id="social-section">
             <div class="deepdive-grid reverse">
                 <div class="deepdive-content">
                     <span class="hero-tag">Organic Direct Growth</span>
                     <h2>Social Media Analytics & Growth Strategy</h2>
-                    <p>Stop guessing what to post. This data-driven service plugs into your B&B’s social profiles (Instagram, Facebook, TikTok) to pull deep performance stats, break down what is actually driving engagement, and give you a clear, actionable roadmap to turn scrollers into direct bookings.</p>
+                    <p>Stop guessing what to post. This data-driven service plugs into your B&B’s social profiles to pull deep performance stats and build an actionable roadmap for direct bookings.</p>
                     
                     <ul class="benefit-list">
-                        <li><strong>In-Depth Performance Audit:</strong> Detailed metrics breakdown showing what content works and what isn’t working for the hospitality industry.</li>
-                        <li><strong>Audience Growth Blueprint:</strong> Tailored strategies to increase followers, boost engagement rates, and drive higher click-throughs to your booking engine.</li>
-                        <li><strong>Monthly Growth Report & Strategy Call:</strong> A clear, jargon-free monthly action plan for the way forward.</li>
+                        <li><strong>In-Depth Performance Audit:</strong> Detailed metrics breakdown for hospitality accounts.</li>
+                        <li><strong>Audience Growth Blueprint:</strong> Strategies to increase followers and click-throughs.</li>
+                        <li><strong>Monthly Growth Report:</strong> Clear, jargon-free monthly action plans.</li>
                     </ul>
 
                     <div class="cta-group">
-                        <a href="https://wa.me/27828215975?text=Hi%20Johann,%20I'd%20like%20to%20discuss%20Social%20Media%20Management%20for%20our%20property." target="_blank" class="btn-primary">Get Started</a>
-                        <button onclick="openModal('socialModal')" class="btn-secondary">View Description & Pricing</button>
+                        <a href="#contact" class="btn-primary">Get Started</a>
+                        <button onclick="openModal('socialModal')" class="btn-secondary">View Details & Pricing</button>
                     </div>
                 </div>
 
@@ -480,23 +574,23 @@
             </div>
         </section>
 
-        <!-- DEEP DIVE SECTION 3: SOCIAL MEDIA CONTENT CREATION (Image 6) -->
+        <!-- DEEP DIVE SECTION 3: CONTENT CREATION -->
         <section class="feature-deepdive" id="production-section">
             <div class="deepdive-grid">
                 <div class="deepdive-content">
                     <span class="hero-tag">Monthly Packages</span>
                     <h2>Social Media Content Creation</h2>
-                    <p>High-converting, aesthetic visual content tailored specifically for West Coast tourism—showcasing your cozy rooms, local breakfast spreads, scenic coastal views, and unique guest experiences. We handle the production so your feeds stay active and magnetic.</p>
+                    <p>High-converting, aesthetic visual content tailored specifically for West Coast tourism—showcasing your cozy rooms, breakfast spreads, and scenic coastal views.</p>
 
                     <ul class="benefit-list">
-                        <li><strong>Option A (Half-Day Shoot):</strong> Up to 4 hours on-site photo and short-form video coverage. Edited photo library + monthly batch of ready-to-post short videos.</li>
-                        <li><strong>Option B (Full-Day Shoot):</strong> Full 8-hour on-site production day designed for larger boutique hotels. Comprehensive media bank, extensive reels calendar assets, and drone coverage.</li>
-                        <li><strong>Visual Trust & Consistency:</strong> Travelers book based on emotion and imagery. Regular monthly content ensures your channels never go silent.</li>
+                        <li><strong>Option A (Half-Day Shoot):</strong> Up to 4 hours on-site photo and video coverage.</li>
+                        <li><strong>Option B (Full-Day Shoot):</strong> Full 8-hour production day with drone coverage.</li>
+                        <li><strong>Visual Trust & Consistency:</strong> Ensure your social feeds never go silent.</li>
                     </ul>
 
                     <div class="cta-group">
-                        <a href="https://wa.me/27828215975?text=Hi%20Johann,%20I'd%20like%20to%20book%20a%20Content%20Creation%20package." target="_blank" class="btn-primary">Book Content Shoot</a>
-                        <button onclick="openModal('contentModal')" class="btn-secondary">View Description & Pricing</button>
+                        <a href="#contact" class="btn-primary">Book Content Shoot</a>
+                        <button onclick="openModal('contentModal')" class="btn-secondary">View Details & Pricing</button>
                     </div>
                 </div>
 
@@ -516,6 +610,75 @@
             </div>
         </section>
 
+        <!-- CONTACT SECTION WITH FULL DETAILS & FORM -->
+        <section class="contact-section" id="contact">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Ready to elevate your property's digital footprint? Reach out directly below.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information Column -->
+                <div class="contact-info-card">
+                    <h2>Let's Discuss Your Project</h2>
+                    <p>Whether you need an interactive guest portal, a social media growth strategy, or high-end visual content creation, I'm here to help your property thrive.</p>
+                    
+                    <div class="contact-details-list">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">✉</div>
+                            <div class="contact-item-text">
+                                <span>Email Address</span>
+                                <a href="mailto:johann@latskymultimedia.co.za">johann@latskymultimedia.co.za</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📞</div>
+                            <div class="contact-item-text">
+                                <span>Cell Phone</span>
+                                <a href="tel:+27828215975">+27 82 821 5975</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div class="contact-item-text">
+                                <span>Location</span>
+                                <p>Cape Town & West Coast, South Africa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fully Functional Formspree Contact Form -->
+                <div class="contact-form-card">
+                    <form action="https://formspree.io/f/johann@latskymultimedia.co.za" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Sarah van der Merwe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="e.g. sarah@guesthouse.co.za" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone / WhatsApp Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +27 82 123 4567">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">How can I help you?</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your property or project..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; text-align: center;">Send Message to Johann</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer>
             <p>&copy; 2026 Latsky Multimedia. All Rights Reserved. | <a href="https://www.latskymultimedia.co.za" target="_blank">www.latskymultimedia.co.za</a></p>
@@ -529,60 +692,33 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('portalModal')">&times;</button>
             <h3>Interactive Guest Portal</h3>
-            
             <h4>What It’s About</h4>
-            <p>Replace bulky, outdated physical folders and scattered WhatsApp messages with a lightning-fast, web-based guest portal that works directly on your guests' mobile phones without requiring a complicated app store download. It acts as a digital concierge right in the palm of their hand.</p>
-            
-            <h4>What’s Included</h4>
-            <p>• <strong>Gate-Opening Integration:</strong> Works with your existing GSM or smart gate controller. If it's already a Centurion or similar GSM unit, the button is free to add. If not, quote the hardware separately.<br>
-            • <strong>Live 7-Day Weather Forecast:</strong> Integrated local weather forecasting so guests can plan their beach days and excursions easily.<br>
-            • <strong>Seamless Amenities & Info:</strong> Instant access to Wi-Fi passwords, house manuals, rules, emergency numbers, and power/load-shedding status.<br>
-            • <strong>Interactive Food & Bar Ordering:</strong> Complete digital menus (pizzas, drinks, mains) with live quantity counters, automated price totals, and direct ordering via WhatsApp.<br>
-            • <strong>Specific Local Activities:</strong> Tailored West Coast activity guides covering coastal nature reserves, local dining, and scenic trails.</p>
-
-            <h4>Why B&Bs Need This</h4>
-            <p>• <strong>Save Hours of Staff Time:</strong> Drastically cuts down repetitive phone calls and questions at reception about Wi-Fi, gate access, or dinner menus.<br>
-            • <strong>Boost On-Site Spend:</strong> Guests order significantly more food, drinks, and extras when the menu is beautifully presented on their phones.<br>
-            • <strong>Professional Edge:</strong> Elevates a standard West Coast guest house experience to a high-end boutique hotel standard.</p>
-
+            <p>Replace bulky, outdated physical folders and scattered WhatsApp messages with a lightning-fast, web-based guest portal that works directly on guest mobile phones.</p>
             <div class="modal-price-tag">
                 Pricing:<br>
                 • Setup & Customization (Once-Off): R3,500 – R5,000<br>
-                • Monthly Hosting & Maintenance Retainer: R500 – R1,000 / month
+                • Monthly Hosting Retainer: R500 – R1,000 / month
             </div>
-            
             <div style="margin-top: 1.5rem; text-align: center;">
                 <a href="https://verandertglobal-creator.github.io/Familia-Guesthouse-Groblersdal/?guest=Vidette&room=Room+6" target="_blank" class="btn-primary" style="display:inline-block;">Test Live Demo</a>
             </div>
         </div>
     </div>
 
-    <!-- Modal 2: Social Media Analytics & Growth Strategy -->
+    <!-- Modal 2: Social Media Management -->
     <div class="modal-overlay" id="socialModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('socialModal')">&times;</button>
             <h3>Social Media Management</h3>
-            
             <h4>What It’s About</h4>
-            <p>Stop guessing what to post. This data-driven service plugs into your B&B’s social profiles (Instagram, Facebook, TikTok) to pull deep performance stats, break down what is actually driving engagement, and give you a clear, actionable roadmap to turn scrollers into direct bookings.</p>
-            
-            <h4>What’s Included</h4>
-            <p>• <strong>In-Depth Performance Audit:</strong> Detailed metrics breakdown showing what content works and what isn’t working for the hospitality industry.<br>
-            • <strong>Audience Growth Blueprint:</strong> Tailored strategies to increase followers, boost engagement rates, and drive higher click-throughs to your booking engine.<br>
-            • <strong>Monthly Growth Report & Strategy Call:</strong> A clear, jargon-free monthly action plan for the way forward.</p>
-
-            <h4>Why B&Bs Need This</h4>
-            <p>• <strong>Maximize Direct Bookings:</strong> Rely less on high-commission third-party booking platforms (like Booking.com or Airbnb) by building your own loyal audience.<br>
-            • <strong>Data Over Guesswork:</strong> Know exactly what types of photos, reels, or captions attract travelers to the West Coast.</p>
-
+            <p>Data-driven performance audits and growth strategies to turn scrollers into direct bookings, bypassing expensive OTA fees.</p>
             <div class="modal-price-tag">
                 Pricing:<br>
-                • Initial Deep-Dive Analytics Setup: R2,500 (Once-off configuration & audit)<br>
-                • Monthly Analytics & Strategy Retainer: R500 – R1,500 / month
+                • Initial Analytics Setup: R2,500 (Once-off)<br>
+                • Monthly Strategy Retainer: R500 – R1,500 / month
             </div>
-
             <div style="margin-top: 1.5rem; text-align: center;">
-                <a href="https://wa.me/27828215975?text=Hi%20Johann,%20I'd%20like%20to%20get%20started%20with%20Social%20Media%20Management." target="_blank" class="btn-primary" style="display:inline-block;">Book Consultation via WhatsApp</a>
+                <a href="#contact" onclick="closeModal('socialModal')" class="btn-primary" style="display:inline-block;">Enquire via Contact Form</a>
             </div>
         </div>
     </div>
@@ -592,27 +728,11 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('contentModal')">&times;</button>
             <h3>Social Media Content Creation</h3>
-            
-            <h4>What It’s About</h4>
-            <p>High-converting, aesthetic visual content tailored specifically for West Coast tourism—showcasing your cozy rooms, local breakfast spreads, scenic coastal views, and unique guest experiences. We handle the production so your feeds stay active and magnetic.</p>
-            
-            <h4>What’s Included & Pricing (Based on On-Site Coverage)</h4>
-            <p>• <strong>Option A: Half-Day Content Shoot (Monthly Package)</strong><br>
-            <em>What it is:</em> Perfect for smaller B&Bs needing fresh content monthly. Includes up to 4 hours of on-site photo and short-form video (Reels/TikTok) coverage.<br>
-            <em>Deliverables:</em> Edited photo library + monthly batch of ready-to-post short videos.<br>
-            <strong>Price: R5,000 / month</strong></p>
-
-            <p style="margin-top: 1rem;">• <strong>Option B: Full-Day Content Shoot (Monthly Package)</strong><br>
-            <em>What it is:</em> Designed for larger boutique hotels or properties with extensive grounds, dining facilities, and multiple room types. Includes a full 8-hour on-site production day.<br>
-            <em>Deliverables:</em> Comprehensive media bank, extensive Reel/TikTok content calendar assets, and drone coverage (if licensed/applicable).<br>
-            <strong>Price: R9,000 / month</strong></p>
-
-            <h4>Why B&Bs Need This</h4>
-            <p>• <strong>Visual Trust:</strong> Travelers book accommodation based on emotion and imagery. High-quality visuals instantly build trust.<br>
-            • <strong>Consistency Wins the Algorithm:</strong> Platforms favor regular, high-retention content. Having a dedicated monthly shoot ensures your channels never go silent.</p>
-
+            <h4>Packages & Pricing</h4>
+            <p>• <strong>Half-Day Shoot Package:</strong> Up to 4 hours on-site photo and short-form video coverage. <strong>Price: R5,000 / month</strong></p>
+            <p>• <strong>Full-Day Shoot Package:</strong> 8-hour on-site production day with extensive content calendar assets and drone coverage. <strong>Price: R9,000 / month</strong></p>
             <div style="margin-top: 1.5rem; text-align: center;">
-                <a href="https://wa.me/27828215975?text=Hi%20Johann,%20I%20would%20like%20to%20book%20a%20Content%20Creation%20Package%20for%20our%20property." target="_blank" class="btn-primary" style="display:inline-block;">Book Content Package via WhatsApp</a>
+                <a href="#contact" onclick="closeModal('contentModal')" class="btn-primary" style="display:inline-block;">Book Content Package</a>
             </div>
         </div>
     </div>
@@ -624,7 +744,6 @@
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
         }
-        // Close modal when clicking outside content box
         window.onclick = function(event) {
             if (event.target.classList.contains('modal-overlay')) {
                 event.target.style.display = "none";
