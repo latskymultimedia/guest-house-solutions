@@ -291,9 +291,11 @@
         }
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 3.5rem;
-            align-items: start;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .contact-info-card h2 { font-size: 2.1rem; margin-bottom: 1rem; }
         .contact-info-card p { color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
@@ -326,41 +328,16 @@
         .contact-item-text a, .contact-item-text p { color: #FFF; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
         .contact-item-text a:hover { color: var(--accent); }
 
-        .contact-form-card {
+        .direct-email-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 3rem 2.5rem;
+            text-align: center;
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-        }
-        .form-control {
-            width: 100%;
-            background: #0B0F19;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 0.85rem 1rem;
-            color: #FFF;
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: border-color 0.2s;
-        }
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-        textarea.form-control { resize: vertical; min-height: 120px; }
+        .direct-email-card h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .direct-email-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.6; }
 
         /* Modal Popup Styles */
         .modal-overlay {
@@ -600,7 +577,7 @@
             </div>
         </section>
 
-        <!-- CONTACT SECTION WITH FULL DETAILS & FORM -->
+        <!-- CONTACT SECTION WITH FULL DETAILS & DIRECT EMAIL -->
         <section class="contact-section" id="contact">
             <div class="section-header">
                 <h2>Get in Touch</h2>
@@ -640,31 +617,11 @@
                     </div>
                 </div>
 
-                <!-- Fully Functional Formspree Contact Form -->
-                <div class="contact-form-card">
-                    <form action="https://formspree.io/f/johann@latskymultimedia.co.za" method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Sarah van der Merwe" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="e.g. sarah@guesthouse.co.za" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone / WhatsApp Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +27 82 123 4567">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">How can I help you?</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your property or project..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-primary" style="width: 100%; text-align: center;">Send Message to Johann</button>
-                    </form>
+                <!-- Direct Clickable Email Card (Replaces the Form) -->
+                <div class="direct-email-card">
+                    <h3>Send a Direct Email</h3>
+                    <p>Clicking the button below will instantly open your preferred email client (like Outlook, Gmail, or Apple Mail) pre-addressed to Johann.</p>
+                    <a href="mailto:johann@latskymultimedia.co.za?subject=Inquiry%20Regarding%20Latsky%20Multimedia%20Services" class="btn-primary" style="display: inline-block; width: 100%; text-align: center;">Open Email App & Message Johann</a>
                 </div>
             </div>
         </section>
@@ -708,7 +665,7 @@
                 • Monthly Strategy Retainer: R500 – R1,500 / month
             </div>
             <div style="margin-top: 1.5rem; text-align: center;">
-                <a href="#contact" onclick="closeModal('socialModal')" class="btn-primary" style="display:inline-block;">Enquire via Contact Form</a>
+                <a href="#contact" onclick="closeModal('socialModal')" class="btn-primary" style="display:inline-block;">Go to Contact Section</a>
             </div>
         </div>
     </div>
@@ -722,7 +679,7 @@
             <p>• <strong>Half-Day Shoot Package:</strong> Up to 4 hours on-site photo and short-form video coverage. <strong>Price: R5,000 / month</strong></p>
             <p>• <strong>Full-Day Shoot Package:</strong> 8-hour on-site production day with extensive content calendar assets and drone coverage. <strong>Price: R9,000 / month</strong></p>
             <div style="margin-top: 1.5rem; text-align: center;">
-                <a href="#contact" onclick="closeModal('contentModal')" class="btn-primary" style="display:inline-block;">Book Content Package</a>
+                <a href="#contact" onclick="closeModal('contentModal')" class="btn-primary" style="display:inline-block;">Go to Contact Section</a>
             </div>
         </div>
     </div>
