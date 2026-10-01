@@ -307,6 +307,18 @@
         }
         .featured-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #FFF; }
         .featured-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #0B0F19;
+            border: 1px solid var(--glass-border);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         /* Contact Section Styling */
         .contact-section {
@@ -602,32 +614,35 @@
             </div>
         </section>
 
-        <!-- FEATURED WORK / PROPERTY FOOTAGE SECTION -->
+        <!-- FEATURED WORK / PROPERTY FOOTAGE SECTION WITH EMBEDDED PLAYERS -->
         <section class="featured-work-section" id="featured-work">
             <div class="section-header">
                 <span class="hero-tag">Cinematic Portfolio</span>
                 <h2>Featured Property Footage</h2>
-                <p>Explore recent visual content and venue coverage captured by Latsky Multimedia.</p>
+                <p>Watch recent visual content and venue coverage captured directly on-site.</p>
             </div>
 
             <div class="featured-grid">
+                <!-- Embedded Instagram Reel Player Card -->
                 <div class="featured-card">
                     <div>
                         <h3>Property Reel (Instagram)</h3>
                         <p>High-converting vertical video coverage showcasing luxury interior and hospitality highlights.</p>
                     </div>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="https://www.instagram.com/reel/Cu1PdKQgL1J/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="btn-secondary" style="display: block; text-align: center;">View on Instagram</a>
+                    <div class="video-container" style="margin-top: 1.5rem;">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cu1PdKQgL1J/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" data-instgrm-version="14" style="background:#0B0F19; border:0; border-radius:12px; margin:0; max-width:540px; width:100%;"></blockquote>
+                        <script async src="//www.instagram.com/embed.js"></script>
                     </div>
                 </div>
 
+                <!-- Embedded Facebook Video Player Card -->
                 <div class="featured-card">
                     <div>
                         <h3>Venue Showcase (Facebook)</h3>
                         <p>Comprehensive video walkthrough and promotional footage filmed on-site for boutique venues.</p>
                     </div>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="https://www.facebook.com/share/v/1TcU9k1ANy/" target="_blank" class="btn-secondary" style="display: block; text-align: center;">View on Facebook</a>
+                    <div class="video-container" style="margin-top: 1.5rem;">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1TcU9k1ANy%2F&show_text=false&width=267&t=0" width="100%" height="320" style="border:none;overflow:hidden;background:#0B0F19;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                 </div>
             </div>
