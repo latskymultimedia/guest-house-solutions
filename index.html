@@ -319,6 +319,44 @@
             align-items: center;
             justify-content: center;
         }
+        
+        /* Custom Video Trigger Overlay */
+        .video-trigger-overlay {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: border-color 0.25s, transform 0.25s;
+        }
+        .video-trigger-overlay:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .play-button-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px -5px var(--accent-glow);
+            margin-bottom: 0.75rem;
+        }
+        .video-trigger-overlay span {
+            color: #FFF;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
 
         /* Contact Section Styling */
         .contact-section {
@@ -614,35 +652,38 @@
             </div>
         </section>
 
-        <!-- FEATURED WORK / PROPERTY FOOTAGE SECTION WITH EMBEDDED PLAYERS -->
+        <!-- FEATURED WORK / PROPERTY FOOTAGE SECTION -->
         <section class="featured-work-section" id="featured-work">
             <div class="section-header">
                 <span class="hero-tag">Cinematic Portfolio</span>
                 <h2>Featured Property Footage</h2>
-                <p>Watch recent visual content and venue coverage captured directly on-site.</p>
+                <p>Explore recent visual content and venue coverage captured directly on-site.</p>
             </div>
 
             <div class="featured-grid">
-                <!-- Embedded Instagram Reel Player Card -->
+                <!-- Instagram Reel Player Card -->
                 <div class="featured-card">
                     <div>
                         <h3>Property Reel (Instagram)</h3>
                         <p>High-converting vertical video coverage showcasing luxury interior and hospitality highlights.</p>
                     </div>
                     <div class="video-container" style="margin-top: 1.5rem;">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cu1PdKQgL1J/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" data-instgrm-version="14" style="background:#0B0F19; border:0; border-radius:12px; margin:0; max-width:540px; width:100%;"></blockquote>
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cu1PdKQgL1J/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" data-instgrm-version="14" style="background:#0B0F19; border:0; border-radius:12px; margin:0; width:100%;"></blockquote>
                         <script async src="//www.instagram.com/embed.js"></script>
                     </div>
                 </div>
 
-                <!-- Embedded Facebook Video Player Card -->
+                <!-- Facebook Video Player Card (Fixed with Play Button Trigger Box) -->
                 <div class="featured-card">
                     <div>
                         <h3>Venue Showcase (Facebook)</h3>
                         <p>Comprehensive video walkthrough and promotional footage filmed on-site for boutique venues.</p>
                     </div>
-                    <div class="video-container" style="margin-top: 1.5rem;">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1TcU9k1ANy%2F&show_text=false&width=267&t=0" width="100%" height="320" style="border:none;overflow:hidden;background:#0B0F19;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/share/v/1TcU9k1ANy/" target="_blank" class="video-trigger-overlay">
+                            <div class="play-button-icon">▶</div>
+                            <span>Watch Venue Video on Facebook</span>
+                        </a>
                     </div>
                 </div>
             </div>
