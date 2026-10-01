@@ -101,7 +101,7 @@
             letter-spacing: 1.5px;
             margin-bottom: 1.25rem;
         }
-        .hero h1 { font-size: 2.5rem; line-height: 1.15; margin-bottom: 1.25rem; }
+        .hero h1 { font-size: 2.8rem; line-height: 1.15; margin-bottom: 1.25rem; }
         .hero p { max-width: 680px; margin: 0 auto 2rem; font-size: 1rem; color: var(--text-muted); }
 
         /* Clickable 3 Core Pillars - Cards Grid */
@@ -283,6 +283,31 @@
         .stat-item h4 { font-size: 1.3rem; color: var(--accent-green); }
         .stat-item p { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
 
+        /* Featured Work Section Styles */
+        .featured-work-section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--glass-border);
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .featured-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .featured-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #FFF; }
+        .featured-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem; }
+
         /* Contact Section Styling */
         .contact-section {
             padding: 5rem 0;
@@ -423,7 +448,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <span class="hero-tag">Hospitality Growth Engine</span>
-            <h1>Elevate Guest Experience & <br><span class="text-gradient">Maximize Direct Bookings</span></h1>
+            <h1>Guest House Solutions</h1>
             <p>Combining high-end cinema production, hands-off social media growth, and interactive guest-house portals for luxury West Coast stays.</p>
         </section>
 
@@ -577,6 +602,37 @@
             </div>
         </section>
 
+        <!-- FEATURED WORK / PROPERTY FOOTAGE SECTION -->
+        <section class="featured-work-section" id="featured-work">
+            <div class="section-header">
+                <span class="hero-tag">Cinematic Portfolio</span>
+                <h2>Featured Property Footage</h2>
+                <p>Explore recent visual content and venue coverage captured by Latsky Multimedia.</p>
+            </div>
+
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div>
+                        <h3>Property Reel (Instagram)</h3>
+                        <p>High-converting vertical video coverage showcasing luxury interior and hospitality highlights.</p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.instagram.com/reel/Cu1PdKQgL1J/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="btn-secondary" style="display: block; text-align: center;">View on Instagram</a>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div>
+                        <h3>Venue Showcase (Facebook)</h3>
+                        <p>Comprehensive video walkthrough and promotional footage filmed on-site for boutique venues.</p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/share/v/1TcU9k1ANy/" target="_blank" class="btn-secondary" style="display: block; text-align: center;">View on Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CONTACT SECTION WITH FULL DETAILS & DIRECT EMAIL -->
         <section class="contact-section" id="contact">
             <div class="section-header">
@@ -617,10 +673,10 @@
                     </div>
                 </div>
 
-                <!-- Direct Clickable Email Card (Replaces the Form) -->
+                <!-- Direct Clickable Email Card -->
                 <div class="direct-email-card">
                     <h3>Send a Direct Email</h3>
-                    <p>Clicking the button below will instantly open your preferred email client (like Outlook, Gmail, or Apple Mail) pre-addressed to Johann.</p>
+                    <p>Clicking the button below will instantly open your preferred email client pre-addressed to Johann.</p>
                     <a href="mailto:johann@latskymultimedia.co.za?subject=Inquiry%20Regarding%20Latsky%20Multimedia%20Services" class="btn-primary" style="display: inline-block; width: 100%; text-align: center;">Open Email App & Message Johann</a>
                 </div>
             </div>
@@ -628,7 +684,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Latsky Multimedia. All Rights Reserved. | <a href="https://www.latskymultimedia.co.za" target="_blank">www.latskymultimedia.co.za</a></p>
+            <p>&copy; 2026 Latsky Multimedia. All Rights Reserved. | <a href="https://www.latskymultimedia.co.za" target="_blank">www.latskymultimedia.co.za (official)</a></p>
         </footer>
     </div>
 
